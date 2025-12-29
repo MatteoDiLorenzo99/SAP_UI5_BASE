@@ -1,0 +1,122 @@
+[
+    {
+        "CurrencyCode": "nFHTJ",
+        "ISOCode": "IS1",
+        "Text": "Text1",
+        "DecimalPlaces": 129
+    },
+    {
+        "CurrencyCode": "efNKa",
+        "ISOCode": "IS2",
+        "Text": "Text2",
+        "DecimalPlaces": 67
+    },
+    {
+        "CurrencyCode": "pMBfo",
+        "ISOCode": "IS3",
+        "Text": "Text3",
+        "DecimalPlaces": 161
+    },
+    {
+        "CurrencyCode": "tRsmK",
+        "ISOCode": "IS4",
+        "Text": "Text4",
+        "DecimalPlaces": 111
+    },
+    {
+        "CurrencyCode": "vtgBL",
+        "ISOCode": "IS5",
+        "Text": "Text5",
+        "DecimalPlaces": 88
+    },
+    {
+        "CurrencyCode": "lKkIO",
+        "ISOCode": "IS6",
+        "Text": "Text6",
+        "DecimalPlaces": 192
+    },
+    {
+        "CurrencyCode": "FJmDK",
+        "ISOCode": "IS7",
+        "Text": "Text7",
+        "DecimalPlaces": 107
+    },
+    {
+        "CurrencyCode": "nFXWw",
+        "ISOCode": "IS8",
+        "Text": "Text8",
+        "DecimalPlaces": 60
+    },
+    {
+        "CurrencyCode": "yBmbz",
+        "ISOCode": "IS9",
+        "Text": "Text9",
+        "DecimalPlaces": 164
+    },
+    {
+        "CurrencyCode": "lsFsy",
+        "ISOCode": "I10",
+        "Text": "Text10",
+        "DecimalPlaces": 159
+    },
+    {
+        "CurrencyCode": "ONCbf",
+        "ISOCode": "I11",
+        "Text": "Text11",
+        "DecimalPlaces": 119
+    },
+    {
+        "CurrencyCode": "FmZBW",
+        "ISOCode": "I12",
+        "Text": "Text12",
+        "DecimalPlaces": 39
+    },
+    {
+        "CurrencyCode": "QFgde",
+        "ISOCode": "I13",
+        "Text": "Text13",
+        "DecimalPlaces": 116
+    },
+    {
+        "CurrencyCode": "ubGBp",
+        "ISOCode": "I14",
+        "Text": "Text14",
+        "DecimalPlaces": 41
+    },
+    {
+        "CurrencyCode": "JNaSu",
+        "ISOCode": "I15",
+        "Text": "Text15",
+        "DecimalPlaces": 6
+    },
+    {
+        "CurrencyCode": "ZrHnv",
+        "ISOCode": "I16",
+        "Text": "Text16",
+        "DecimalPlaces": 24
+    },
+    {
+        "CurrencyCode": "PYklf",
+        "ISOCode": "I17",
+        "Text": "Text17",
+        "DecimalPlaces": 112
+    },
+    {
+        "CurrencyCode": "RVVhS",
+        "ISOCode": "I18",
+        "Text": "Text18",
+        "DecimalPlaces": 216
+    },
+    {
+        "CurrencyCode": "AHiRx",
+        "ISOCode": "I19",
+        "Text": "Text19",
+        "DecimalPlaces": 235
+    },
+    {
+        "CurrencyCode": "OfqRQ",
+        "ISOCode": "I20",
+        "Text": "Text20",
+        "DecimalPlaces": 52
+    }
+]

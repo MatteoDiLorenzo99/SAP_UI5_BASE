@@ -1,0 +1,31 @@
+<mvc:View xmlns:smarttable="sap.ui.comp.smarttable" controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" >
+
+    <headerContent>
+        <Button text="Aggiorna tabella" press="onRefreshPage" id="btnRefresh" type="Emphasized" />
+        <Button text="create" press="onPressCreate" id="btnCreate"/>
+        <Button text="update" press="onPressUpdate" id="btnUpdate"/>
+        <Button text="delete" press="onPressDelete" id="btnDelete" type="Attention"/>
+        <Button text="carica Excel" press="onPressLoadExcel" id="btnRead" icon="sap-icon://upload"/>
+    </headerContent>
+
+    <smarttable:SmartTable
+        id="IDtable"
+        entitySet="ZCDS_TRAINS_VIDEO"
+        enableAutoBinding="true"
+        width="100%"
+        enableAutoColumnWidth="true"
+        enableExport="true"
+        tableType="Table"
+        header="{i18n>title}"
+        showRowCount="true"
+        showFullScreenButton="true"
+        persistencyKey="ST1"
+        useVariantManagement= "true"
+        class="sapUiResponsiveContentPadding"
+        useTablePersonalisation="true"
+    /> 
+</Page>
+</mvc:View>

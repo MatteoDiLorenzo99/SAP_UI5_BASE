@@ -1,0 +1,35 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+>
+
+    <Dialog
+        id="UploadDialog"
+        title="Carica file Excel"
+        contentWidth="400px"
+        draggable="true"
+        resizable="true">
+
+        <VBox class="sapUiSmallMargin">
+            <Text text="Seleziona un file Excel (.xlsx) da caricare" />
+
+            <u:FileUploader
+                name= "excelUpload"
+                tooltip= "Importa Excel o CSV"
+                id="fileUploader"
+                fileType="xlsx, csv, XLSX"
+                sameFilenameAllowed="true"
+                change=".onFileChange"
+                placeholder="Seleziona file..."
+                width="100%" />
+        </VBox>
+
+        <beginButton>
+            <Button
+                text="Chiudi"
+                press=".onCloseDialog" />
+        </beginButton>
+
+    </Dialog>
+</core:FragmentDefinition>

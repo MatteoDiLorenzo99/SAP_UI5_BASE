@@ -1,0 +1,51 @@
+<core:FragmentDefinition
+    xmlns="sap.m" 
+    xmlns:core="sap.ui.core" 
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:sf="sap.ui.comp.smartfield"
+    xmlns:form="sap.ui.comp.smartform"
+    xmlns:smartField="sap.ui.comp.smartfield">
+
+    <Dialog
+        id="UpdateSingleRowDialog"
+        title="Aggiorna Riga singola"
+        draggable="true"
+        resizable="true"
+        stretch="{device>/system/phone}"
+        afterClose=".onDialogClose">
+
+
+      <form:SmartForm id="UpdateSingleSmartform" editable="true" >
+        <form:Group>
+            <form:GroupElement label="Numero treno">
+                <sf:SmartField value="{NumeroTreno}" entitySet="ZCDS_TRAINS_VIDEO" editable="false" id="UpdateSingleNumeroTreno"/>
+            </form:GroupElement>
+            <form:GroupElement label="Stazione partenza">
+                <sf:SmartField value="{StazionePartenza}" entitySet="ZCDS_TRAINS_VIDEO" editable="true" id="UpdateSingleStazionePartenza"/>
+            </form:GroupElement>
+            <form:GroupElement label="Stazione arrivo">
+                <sf:SmartField value="{StazioneArrivo}" entitySet="ZCDS_TRAINS_VIDEO" editable="true" id="UpdateSingleStazioneArrivo"/>
+            </form:GroupElement>
+        </form:Group>
+    </form:SmartForm>
+
+        <beginButton>
+            <Button
+                text="Annulla"
+                type="Reject"
+                press=".onCancel"/>
+        </beginButton>
+
+        <endButton>
+            <Button
+                text="OK"
+                type="Accept"
+                press=".onConfirm"/>
+        </endButton>
+
+    </Dialog>
+</core:FragmentDefinition>
+
+

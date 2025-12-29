@@ -1,0 +1,38 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="project1.controller.FileUploaded"
+    >
+    <Page
+        id="UploadPreviewPage"
+        title="Anteprima righe importate"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+
+        <content>
+            <Table id="PreviewTable" items="{preview>/items}" inset="false" mode="MultiSelect" alternateRowColors="true">
+    <columns>
+        <Column><Text text="NumeroTreno" /></Column>
+        <Column><Text text="StazionePartenza" /></Column>
+        <Column><Text text="StazioneArrivo" /></Column>
+    </columns>
+    <ColumnListItem>
+        <cells>
+            <Text text="{preview>NumeroTreno}" />
+            <Text text="{preview>StazionePartenza}" />
+            <Text text="{preview>StazioneArrivo}" />
+        </cells>
+    </ColumnListItem>
+</Table>
+
+        </content>
+
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button text="Conferma import" type="Emphasized" press=".onConfirmImport"/>
+                <Button text="Elimina riga" type="Emphasized" press=".onDeleteRows"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
