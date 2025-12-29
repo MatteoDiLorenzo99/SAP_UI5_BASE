@@ -49,7 +49,7 @@ sap.ui.define([
                     sap.m.MessageToast.show("Treno creato con successo!");
                 //    console.log("Creazione riuscita:", oData);
                     this._oDialog.close();
-                    // Refresh della tabella (opzionale)
+                    // Refresh della tabella
                     oModel.refresh();
                 }.bind(this),
         error: function(oError) {

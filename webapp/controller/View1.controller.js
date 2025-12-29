@@ -16,11 +16,13 @@ sap.ui.define([
         onBeforeRendering(){
         },
         onAfterRendering(){
+            //we take the view and the table
             const view = this.ottieniView();
-            const table = this.ottieniTable(view);
+            this._table = this.ottieniTable(view);
         },
         //ACTION LISTENERS FOR BUTTONS AND SWITCH TO OTHER CONTROLLERS AND DIALOGS
         onPressCreate: async function(){
+            //destroy previews controller and dialog
             if (this._oCreateDialogController){
                 this._oCreateDialogController.destroy();
             }
@@ -29,7 +31,7 @@ sap.ui.define([
                 this._oDialogToCreate.destroy();
                 this._oDialogToCreate = null;
             }
-
+            //create new one
             if(!this._oCreateDialog){
                 this._oCreateDialogController = new CreateDialogController();
                 var name = "project1.view.Create";
@@ -37,11 +39,12 @@ sap.ui.define([
                 DialogToOpen.open();
             }
         },
-        onPressDelete: async function(){
-            // Ottieni la SmartTable
-            var oSmartTable = this.byId("IDtable");
+        onPressDelete: async function(table){
+            // obtain smarttable
+            // var oSmartTable = this.byId("IDtable");
+            //we already have it in table
             // Ottieni la tabella interna (può essere sap.m.Table o sap.ui.table.Table)
-            var oTable = oSmartTable.getTable();
+            var oTable = this._table.getTable();
             // Array per le righe selezionate
             var aSelectedItems = [];
 
@@ -61,7 +64,6 @@ sap.ui.define([
                 return;
             }
             
-
             // Ottieni le chiavi delle righe selezionate
             var aKeys = aSelectedItems.map(item => item.getBindingContext().getObject().NumeroTreno); 
             var sMessage = `Stai per eliminare ${aSelectedItems.length} righe, le cui chiavi sono:\n\n${aKeys.join(", ")}\n\nSei sicuro di voler procedere all'eliminazione?`;
@@ -89,13 +91,12 @@ sap.ui.define([
                 if (oTextMessage) {
                     oTextMessage.setText(sMessage);
                 }   
-                // Aggiorna il testo del dialog
                 DialogToOpen.open();
             }
 
         },
         onPressUpdate: async function() {
-            var oSmartTable = this.ottieniTable(this);
+            var oSmartTable = this._table;
             var oTable = oSmartTable.getTable();
 
             var aSelectedItems = this.ottieniRigheSelezionate(oTable);
@@ -139,14 +140,13 @@ sap.ui.define([
             } else {
                 // MultiEdit: setta i context delle righe selezionate
                 var aContexts = aSelectedItems.map(item => item.getBindingContext());
-                DialogToOpen.getContent()[0].setContexts(aContexts); // supponendo che il Container sia il primo content
-        //        sap.ui.core.syncStyleClass("sapUiSizeCompact", this.getView(), DialogToOpen);
+                DialogToOpen.getContent()[0].setContexts(aContexts);
             }
 
             DialogToOpen.open();
         },
         onRefreshPage: function(){
-            var oSmartTable = this.ottieniTable(this);
+            var oSmartTable = this._table;
             if (!oSmartTable) {
                 sap.m.MessageToast.show("Tabella non trovata");
                 return;
@@ -227,46 +227,3 @@ sap.ui.define([
         }
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        onPressCreate: async function () {
-//                if(oController){
-//                    oController.destroy();
-//                 }
-//             if (!this._oCreateDialog) {
-//                 // Creazione istanza del controller dedicato
-//                 var oController = new CreateDialogController();
-// 
-                // Caricamento fragment con controller dedicato
-//                 this._oCreateDialog = await sap.ui.core.Fragment.load({
-//                     name: "project1.view.Create",
-//                     controller: oController
-//                 });
-
-//                 // Collega il dialog al controller
-//                oController.setDialog(this._oCreateDialog);
-// 
-//                 // Aggiunge il dialog come dipendente della view principale
-//                 this.getView().addDependent(this._oCreateDialog);
-//             }
-            // Apertura del dialog
-//             this._oCreateDialog.open();
-//         },
